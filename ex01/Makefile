@@ -1,7 +1,7 @@
 NAME			= Zombie
 
 CC				= c++
-CFLAGS			= -Wall -Wextra -Werror  -MMD -std=c++98
+CFLAGS			= -Wall -Wextra -Werror  -MMD -std=c++98 
 DEPFLAGS		= -MMD -MF $(DEPDIR)/$*.d
 
 SRCDIR			= src

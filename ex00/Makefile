@@ -1,4 +1,4 @@
-NAME			= PhoneBook
+NAME			= Zombie
 
 CC				= c++
 CFLAGS			= -Wall -Wextra -Werror  -MMD -std=c++98
@@ -17,7 +17,7 @@ all: dir $(NAME)
 
 $(NAME): Makefile $(OBJS)
 	@$(CC) $(CFLAGS) $(OBJS) -o $@
-	@echo "\033[1;33mCPP00 EX01 [✔]\033[0m"
+	@echo "\033[1;33mCPP01 EX00 [✔]\033[0m"
 
 
 $(OBJDIR)/%.o: %.cpp
