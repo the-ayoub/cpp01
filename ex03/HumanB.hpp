@@ -10,7 +10,7 @@ class HumanB
 		Weapon *weapon;
 	public:
 		HumanB(std::string _name);
-		void setWeapon(Weapon _weapon);
+		void setWeapon(Weapon &_weapon);
 		void attack();
 };
 #endif
