@@ -1,7 +1,7 @@
 NAME			= Zombie
 
 CC				= c++
-CFLAGS			= -Wall -Wextra -Werror  -MMD -std=c++98 
+CFLAGS			= -Wall -Wextra -Werror  -std=c++98
 DEPFLAGS		= -MMD -MF $(DEPDIR)/$*.d
 
 SRCDIR			= src
@@ -9,6 +9,9 @@ OBJDIR			= obj
 DEPDIR			= deps
 
 SRCS = main.cpp Zombie.cpp zombieHorde.cpp
+
+HEADERS = Zombie.hpp
+
 OBJS			= $(SRCS:%.cpp=$(OBJDIR)/%.o)
 DEPS			= $(OBJS:%.o=$(DEPDIR)/%.d)
 
@@ -19,7 +22,7 @@ $(NAME): Makefile $(OBJS)
 	@echo "\033[1;33mCPP01 EX01 [✔]\033[0m"
 
 
-$(OBJDIR)/%.o: %.cpp
+$(OBJDIR)/%.o: %.cpp $(HEADERS)
 	@mkdir -p $(dir $@) $(dir $(DEPDIR)/$*.d)
 	@$(CC) $(CFLAGS) $(DEPFLAGS) $(INCLUDE) -c $< -o $@
 
@@ -28,7 +31,7 @@ dir:
 
 clean:
 	@rm -rf $(OBJDIR) $(DEPDIR)
-	@echo "\033[1;33mCHAU\033[0m"
+	@echo "\033[1;33mCHAUU\033[0m"
 
 fclean: clean
 	@rm -f $(NAME)

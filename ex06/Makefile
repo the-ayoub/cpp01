@@ -1,4 +1,4 @@
-NAME			= Zombie
+NAME			= harlFilter
 
 CC				= c++
 CFLAGS			= -Wall -Wextra -Werror  -std=c++98
@@ -8,9 +8,9 @@ SRCDIR			= src
 OBJDIR			= obj
 DEPDIR			= deps
 
-SRCS = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+SRCS = main.cpp	Harl.cpp
 
-HEADERS = Zombie.hpp
+HEADERS = Harl.hpp
 
 OBJS			= $(SRCS:%.cpp=$(OBJDIR)/%.o)
 DEPS			= $(OBJS:%.o=$(DEPDIR)/%.d)
@@ -19,7 +19,7 @@ all: dir $(NAME)
 
 $(NAME): Makefile $(OBJS)
 	@$(CC) $(CFLAGS) $(OBJS) -o $@
-	@echo "\033[1;33mCPP01 EX00 [✔]\033[0m"
+	@echo "\033[1;33mCPP01 EX06 [✔]\033[0m"
 
 
 $(OBJDIR)/%.o: %.cpp $(HEADERS)
